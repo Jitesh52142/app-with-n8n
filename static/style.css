@@ -1,0 +1,149 @@
+/* Reset & base */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #4a90e2, #1c3c72);
+  color: #8f3ccf;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-container {
+  width: 70vw;         /* bigger width */
+  max-width: 900px;    /* bigger max width */
+  height: 70vh;        /* bigger height */
+  max-height: 900px;   /* bigger max height */
+  background: #222b45;
+  border-radius: 16px;
+  box-shadow:
+    0 8px 24px rgba(74, 144, 226, 0.4),
+    0 4px 16px rgba(28, 60, 114, 0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  backdrop-filter: saturate(180%) blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chat-header {
+  padding: 20px;
+  background: linear-gradient(90deg, #1c3c72, #4a90e2);
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #e0e7ff;
+  user-select: none;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.chat-box {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  scrollbar-width: thin;
+  scrollbar-color: #4a90e2 transparent;
+}
+
+/* Custom scrollbar for Webkit browsers */
+.chat-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: #4a90e2;
+  border-radius: 8px;
+  border: 2px solid transparent;
+}
+
+.message {
+  padding: 14px 20px;
+  border-radius: 20px;
+  max-width: 75%;
+  line-height: 1.5;
+  word-wrap: break-word;
+  font-size: 1rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  user-select: text;
+  transition: background-color 0.3s ease;
+}
+
+.message.user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #4174ff, #6891ff);
+  color: white;
+  box-shadow: 0 4px 15px rgba(65, 116, 255, 0.6);
+}
+
+.message.bot {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #2e374f, #41506e);
+  color: #d1d9ff;
+  box-shadow: 0 4px 15px rgba(46, 55, 79, 0.7);
+}
+
+.input-area {
+  display: flex;
+  padding: 18px 20px;
+  background: #1c2948;
+  border-top: 1px solid rgba(74, 144, 226, 0.3);
+  gap: 12px;
+}
+
+#user-input {
+  flex: 1;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  background: #2b3a6f;
+  color: #e0e7ff;
+  box-shadow: inset 0 0 8px rgba(74, 144, 226, 0.5);
+  transition: background-color 0.25s ease;
+}
+
+#user-input::placeholder {
+  color: #aac1ff;
+  opacity: 0.8;
+}
+
+#user-input:focus {
+  background: #3b51a3;
+  box-shadow: inset 0 0 12px rgba(74, 144, 226, 0.9);
+}
+
+button {
+  padding: 14px 26px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #4174ff, #6891ff);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(65, 116, 255, 0.6);
+  transition: background 0.3s ease, transform 0.15s ease;
+  user-select: none;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2c5edb, #4d79ff);
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
